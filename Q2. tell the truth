@@ -1,0 +1,19 @@
+
+'''Description : The probabilities that “A” and “B” will tell the truth are 2/3 and 4/5 respectively. What is the probability that
+
+i) they agree with each other
+
+ii) they contradict each other while giving a witness in the court. '''
+
+
+''' SOL 1'''
+
+Probability of A telling truth => Pa = 2/3
+Probability of B telling truth => Pb = 4/5
+
+i)they agree with each other is equal to both speaking truth or both speaking false
+Pa Agree b = (Pa * Pb) + ((1-Pa) * (1-Pb)) = 0.6
+
+ii) they contradict each other while giving a witness in the court means one of them tells
+the truth other does not agree.
+PaContradictb = (Pa * (1-Pb)) + ((1-Pa)*Pb) = 0.4
