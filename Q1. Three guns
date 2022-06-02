@@ -1,0 +1,33 @@
+'''
+
+One shot is fired from each of the three guns. E1, E2, E3 denote the events that the target is hit by the first, second and third gun respectively. If P(E1) = 0·5, P(E2) = 0·6 and P(E3) = 0·8 and. E1, E2, E3 are independent events, find the probability that
+
+
+(i) exactly one hit is registered
+
+(ii) at least two hits are registered.  
+
+'''
+
+''' SOL 1 ''' 
+
+The probability of the first gun hitting the target = P(E1) = 0·5
+The probability of the second gun hitting the target = P(E2) = 0·6
+The probability of the Third gun hitting the target = P(E3) = 0·8
+
+The probability of the first gun not hitting the target = P(E1 not) = 0·5
+The probability of the second gun not hitting the target=P(E2 not) = 0·4
+The probability of the third gun not hitting the target =P(E3 not) = 0·2
+
+(a)Exactly one hit can be registered in ME way:
+
+Exactly one =P(E1 ∩ E2 not ∩ E3 not ) +P(E1 not ∩ E2 ∩ E3 not ) +P(E1 not ∩ E2 not ∩ E3)
+= P(E1) x P(E2 not) x P(E3) + P(E1 not) x P(E2) x P(E3 not) + P(E1 not) x P(E2) x P(E3 not)
+= 0.5 x 0·4 x 0·2 + 0·5 x 0·6 x 0·2 + 0·5 x 0·4 x 0·8 = 0·26.
+
+(b)At least two hits can be registered:
+
+Atleast one=P(E1∩ E2∩E3 not ) +P(E1 ∩ E2 not ∩ E3) +P(E1 not ∩ E2 ∩ E3) + P(E1 ∩ E2 ∩ E3)
+= P(E1) x P(E2) x P(E3not) + P(E1) x P(E2 not) x P(E3) + P(E1 not) x P(E2) x P(E3)+ P(E1) x P(E2) x P(E3)
+= 0·5 x0·6x 0·2+ 0·5 x 0·4 x0·8 + 0·5 x 0·6 x 0·8 + 0·5 x 0·6 x 0·8
+= 0·06 + 0·16 + 0·24 + 0·24 = 0·70
