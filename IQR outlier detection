@@ -1,7 +1,46 @@
 '''
+Q.
+Outliers are certain points in the data set which deviate from the general trends in the dataset. There are several ways to detect outliers. In this problem, we will use the median absolute deviation method to find outliers. According to this method:
+
+Find the Inter-quartile range [Q3 - Q1]
+Upper range is computed as Q3 + 1.5*IQR
+Lower range is computed as Q1 - 1.5*IQR
+Values that have high values than upper range are suspected to be outliers.
+Values that have low values than lower range are suspected to be outliers.
+Complete the function that identifies the outliers and return them by applying the function on the input list. In case no outliers are present, return an empty list.
+
+Input Format
+
+Number of testcases.
+N space separated integers as an input for each test case 
+Output Format
+
+Space separated integers but there isn't any space after the last element.
+only outliers are printed
+Example Input
+
+2
+1 1 2
+10 8 9 7 6 11 7 1 9 929 100
+Example Output
+
+
+1 929 100
+Note:
+
+You just have to complete the function, which takes the input python list as a parameter and returns the output list of outliers.
+You can use the functions of NumPy to build the helper functions for attempting this question.
+Make sure to preserve the order of the outliers as per in the input.
+'''
+
+
+'''
 SOL Approach : As mentioned in the question description itself, we can start by finding the interquartile range by using the 75th and 25th percentile.
 Add 1.5*iqr to the 7th, and subtract the same from the 25th percentile. Compute this list of values and return the result
 '''
+
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 '''
 SOL : 1
