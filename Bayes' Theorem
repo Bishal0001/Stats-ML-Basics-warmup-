@@ -1,0 +1,59 @@
+'''
+Q.
+As you know, Covid-19 tests are common nowadays,but some results of tests are not true.Given that the probability of getting covid is 60%,
+People who tested positive and have covid is 90% but people who tested positive and don't have covid is 10%. What is the probability that
+they actually have covid?
+
+Write a program that calculates the required probability using the P(covid), P(positive|covid) and P(positive|~covid) as the input parameters.
+Take care that the inputs are taken as strings therefore if you are using those variables ensure to typecast them into floats.
+
+Constraint: 0<input probabilities<1
+
+Input Format
+
+Number of testcases
+P(covid)
+P(positive|covid)
+P(positive|~covid)
+Output format:
+
+Required probability for each test case in a new line
+Sample Input:
+
+1
+0.6
+0.9
+0.1
+Sample Output:
+
+0.931
+Note: The answers are rounded off to 3 decimal places using numpy.round() function. The code for taking input is already taken care of just make sure
+that you are printing the result inside the function.
+'''
+
+''' SOL Aproach'''
+
+Using baye’s theorem,
+P(covid/positive) = P(positive/covid) x P(covid)/P(positive)
+
+P(positive) = P(positive/covid) x P(covid) + P(positive/not covid) x P(not covid)
+
+
+
+
+'''SOL : 1'''
+def solve(prior,positive_covid,positive_not_covid):
+    # YOUR CODE GOES HERE
+    ans=None
+    ans = (float(positive_covid) * float(prior)) / ((float(positive_covid) * float(prior)) + (float(positive_not_covid) *(1-float(prior))))
+    return round(ans,3);
+    
+
+'''SOL : 2'''
+def solve(prior,positive_covid,positive_not_covid):
+    import numpy as np
+    # YOUR CODE GOES HERE
+    p_covid = float(prior)
+    p_given_c = float(positive_covid)
+    p_given_not_c = float(positive_not_covid)
+    return( np.round((p_covid * p_given_c) / ((p_covid * p_given_c) + (p_given_not_c * (1 - p_covid))),3))
