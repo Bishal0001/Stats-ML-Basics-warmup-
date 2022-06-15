@@ -1,0 +1,45 @@
+'''
+Q6. Coke bottles
+Solved
+
+The mean filling capacity for a coke bottle is 550 ml with a standard deviation of 20ml. The random variable filled capacity of the bottles
+follows a normal distribution.
+
+a. What is the probability that the bottle filled less than 500 ml?
+
+b. What is the probability that the bottle filled more than 570 ml?
+
+c. What is the probability that the bottle filled between 460 ml to 575 ml?
+
+NOTE: Use the cdf approach to solve the question.
+
+'''
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+'''SOL : 1'''
+import scipy.stats as stats
+mean=550
+std=20
+
+i) coke_bottle = stats.norm(loc=550,scale=20)
+p(x<500)=coke_bottle.cdf(x=500)
+p(x<500)=0.006209
+
+ii)
+p(x>570)=coke_bottle.cdf(x=570)
+p(x>570)=0.841344
+
+iii)
+below_575 = coke_bottle.cdf(x= 575)
+above_460 = coke_bottle.cdf(x= 460)
+print (below_575 - above_460) => ans: 0.8943
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+'''SOL : 2'''
+
+ans_a  = norm.cdf(500,loc=550,scale=20)
+ans_b = norm.cdf(570,loc=550,scale=20)
+a,b = norm.cdf(575,loc=550,scale=20),norm.cdf(460,loc=550,scale=20)
+ans_c = a-b
