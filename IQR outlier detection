@@ -1,0 +1,56 @@
+'''
+SOL Approach : As mentioned in the question description itself, we can start by finding the interquartile range by using the 75th and 25th percentile.
+Add 1.5*iqr to the 7th, and subtract the same from the 25th percentile. Compute this list of values and return the result
+'''
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+'''
+SOL : 1
+'''
+
+import numpy as np
+def outlier(data):
+    '''
+    Input:
+    data: input data in the form of a python list
+    Output:
+    ans: return the list of outliers in the form of a python list. If no outliers are present, return an empty list
+    '''
+    ans = []
+    # YOUR CODE GOES HERE
+    data_s = sorted(data)
+
+    q1,q3 = np.percentile(data_s,[25,75])
+
+    iqr = q1 - q3
+
+    upper_bound = q3 - (1.5*iqr)
+    lower_bound = q1 + (1.5*iqr)
+
+    for i in range(len(data)):
+        if data[i] < lower_bound:
+            ans.append(data[i]) 
+        elif data[i] > upper_bound:
+            ans.append(data[i])
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+'''
+SOL : 2
+'''
+
+import numpy as np
+def outlier(data):
+    ans = []
+    '''
+    Input:
+    data: input data in the form of a python list
+    Output:
+    ans: return the list of outliers in the form of a python list. If no outliers are present, return an empty list
+    '''
+    # YOUR CODE GOES HERE
+    data = np.array(data)
+    iqr = np.percentile(data, 75) - np.percentile(data, 25)
+    upper = np.percentile(data, 75) + 1.5*iqr
+    lower = np.percentile(data, 25) - 1.5*iqr
+    ans=[ele for ele in data if (ele> upper or ele<lower)]
+    
+    return ans
