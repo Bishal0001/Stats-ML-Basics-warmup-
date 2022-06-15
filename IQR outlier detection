@@ -1,13 +1,15 @@
 '''
 Q.
-Outliers are certain points in the data set which deviate from the general trends in the dataset. There are several ways to detect outliers. In this problem, we will use the median absolute deviation method to find outliers. According to this method:
+Outliers are certain points in the data set which deviate from the general trends in the dataset. There are several ways to detect outliers.
+In this problem, we will use the median absolute deviation method to find outliers. According to this method:
 
 Find the Inter-quartile range [Q3 - Q1]
 Upper range is computed as Q3 + 1.5*IQR
 Lower range is computed as Q1 - 1.5*IQR
 Values that have high values than upper range are suspected to be outliers.
 Values that have low values than lower range are suspected to be outliers.
-Complete the function that identifies the outliers and return them by applying the function on the input list. In case no outliers are present, return an empty list.
+Complete the function that identifies the outliers and return them by applying the function on the input list. In case no outliers are present,
+return an empty list.
 
 Input Format
 
