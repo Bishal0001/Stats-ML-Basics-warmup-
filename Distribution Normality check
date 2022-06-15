@@ -1,0 +1,51 @@
+'''
+SOL Approach : The empirical rule, also referred to as the three-sigma rule or 68-95-99.7 rule, is a statistical rule which states that for
+a normal distribution, almost all observed data will fall within three standard deviations (denoted by σ) of the mean or average (denoted by µ).
+'''
+
+
+'''
+SOL : 1
+'''
+
+import numpy as np
+# from numpy import mean
+# from numpy import std
+def normality_test(arr):
+    '''
+    Input: 
+    arr: a python list denoting the input distribution of floating point values
+    Output:
+    res: return "yes" or "no" as per required, of type string
+    '''
+    res = ""
+    # Your code goes here
+    l = len(arr)
+    num1 = 0
+    num2 = 0
+    num3 = 0
+    
+    m = np.mean(arr)
+    s = np.std(arr)
+    # m = sum(arr)/l
+    # s = (sum((x - m) ** 2 for x in arr) / l) ** .5
+    
+
+    for i in arr:
+        if (i < s + m) and (i > m - s):
+            num1 += 1
+        if  ( i <(2 * s) + m) and  (i > (m - (2 * s))):
+            num2 += 1
+        if ( i <(3 * s) + m) and (i > (m - (3 * s))):
+            num3 += 1
+    
+    p1 = num1 / l
+    p2 = num2 / l 
+    p3 = num3 / l 
+
+    if (abs(p1 - 0.68 ) <= 0.02) and (abs(p2 - 0.97) <= 0.02) and (abs(p3 - 0.99 ) <=0.02):
+        res = 'yes'
+    else:
+        res = 'no'
+    return res
+
