@@ -1,0 +1,41 @@
+Given a sample of data in a Python list, calculate the 68%, 95%, and 99% confidence interval of its mean using the Z-multiplier. The Z-multiplier for 68%, 95%, and 99% is 1, 1.96, and 2.57 respectively.
+
+The output must be a list of lists with each internal list containing the required confidence interval in the order of 68%, 95%, and 99%.
+
+Input Format
+
+number of testcases
+space separated integers for each testcase in a new line
+Output Format
+
+simply printed 2d list for each testcase in a new line.
+Example Input
+
+1
+2 3 5 6 7 9 8 1 2
+Example Output
+
+[[3.86, 5.69], [2.99, 6.57], [2.43, 7.12]]
+Note:
+
+All the elements of the answer are rounded off to two decimal places.
+You can use NumPy to compute the helper functions.
+
+
+
+
+________________________________SOL1________________________________________________________
+import numpy as np
+def ciList(data):
+    '''
+    input: data -> Variable containing the input data in form of python list
+    output: res -> A list of list variable with each internal list containing the required confidence interval in the order of 68%, 95%, and 99%
+    '''
+    res = []
+    # YOUR CODE GOES HERE
+    res = [[np.round(np.mean(data) - (i * (np.std(data) / (np.sqrt(len(data))) )),2),np.round(np.mean(data) + (i * (np.std(data) / (np.sqrt(len(data))) )),2)]for i in [1,1.96,2.57]]
+
+    
+    # Code ends here
+    return res
+  
