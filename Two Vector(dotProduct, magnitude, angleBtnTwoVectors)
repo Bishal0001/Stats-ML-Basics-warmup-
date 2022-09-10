@@ -1,0 +1,23 @@
+- Create a function dotProduct to calculate the dot product of v1 and v2
+- Create a function magnitude to calculate the mangnitude of a vector by
+- calculating the square root of its dot product with itself.
+- Create a function to calculate the angle between the two vectors,
+- In order to perform their dot product, first check if their lengths are equal
+- Calculate the angle between them by calculating the arc cosine of their dot product divided by the product of their mangnitude.
+
+
+
+
+import math
+
+def dotProduct(vl, v2):
+    return sum ((a*b) for a, b in zip(v1, v2))
+
+def magnitude(v):
+    return math.sqrt(dotProduct(v, v) )
+
+def angleBtnTwoVectors(vl, v2):
+    if len(v1) != len(v2): 
+        return "Error"
+    else : 
+        return math.acos(dotProduct(v1, v2) / (magnitude(v1) * magnitude (v2)))
