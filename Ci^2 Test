@@ -1,0 +1,28 @@
+import numpy as np
+from scipy import stats
+from scipy.stats import chi2_contingency
+from scipy.stats import chi2
+from scipy.stats import chisquare
+
+
+Female = [60, 54, 46, 41, 201]
+Male = [40, 44, 53, 57, 194]
+array = np.array([Female,Male])
+
+
+chi_stat, p, dof, expected = chi2_contingency(observed = array, 
+correction = False)
+
+print("Test statistic:", chi_stat)
+print("p-value:", p)
+print("Degrees of freedom:", dof)
+
+chi2_val = np.abs(round(stats.chi2.isf(q = 0.05, df = 4), 4))
+
+print('Critical value for chi-square test:', chi2_val)
+
+if chi_stat < chi2_val:
+    print("Chi statistic < Chi critical. So, fail to reject null hypothesis")
+
+else:
+    print("Chi statistic > Chi critical. So, reject null hypothesis")
