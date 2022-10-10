@@ -1,0 +1,25 @@
+Q. Coefficients & Intercept with Linear Regression
+
+
+
+SOL:
+
+import numpy as np
+
+
+#import Linear Regression class from scikit-learn library
+from sklearn.linear_model import LinearRegression
+
+def coefficientsAndIntercept(xTrain, yTrain):
+  # convert lists into numpy array
+  X_train = np.array(xTrain)
+  y_train = np.array(yTrain)
+  
+  # initialize linear regression
+  regressor = LinearRegression()
+
+  # fit the model
+  regressor.fit(X_train,y_train)
+
+  #return coefficients and intercepts rounded off upto 2 decimal digits
+  return np.round(regressor.coef_,2),np.round(regressor.intercept_,2)
