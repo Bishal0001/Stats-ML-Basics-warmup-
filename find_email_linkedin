@@ -1,0 +1,7 @@
+all_text = input("""Put the copied text here : """)
+for line in all_text.split("\n"):
+    line = line.strip()
+    
+    for word in line.split():
+        if "@" in word and "." in word and 'com' in word:
+            print(word)
